@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Category } from '../Category'
 import { List, Item } from './syles'
-import { categories } from '../../../api/db.json'
 
 export const ListOfCategories = () => {
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    fetch('https://petgram-server-vnav-vnavarro.vercel.app/categories')
+      .then(res => res.json())
+      .then(response => {
+        setCategories(response)
+      })
+  }, [])
+
   return (
     <List>
       {
