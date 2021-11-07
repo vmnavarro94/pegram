@@ -18,4 +18,3 @@ export const Image = styled.img`
   height: 75px;
   width: 75px;
 `
-

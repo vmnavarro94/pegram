@@ -1,6 +1,11 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   mode: 'development',
+  devServer: {
+    client: {
+      overlay: false
+    }
+  },
   output: {
     filename: 'app.bundle.js'
   },

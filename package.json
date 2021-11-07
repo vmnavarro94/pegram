@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack",
     "lint": "standard",
+    "lint-fix": "standard --fix",
     "dev": "webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -7,9 +7,9 @@ export const ListOfCategories = () => {
   return (
     <List>
       {
-        categories.map(category => 
+        categories.map(category =>
           <Item key={category.id}>
-            <Category {...category}/>
+            <Category {...category} />
           </Item>
         )
       }

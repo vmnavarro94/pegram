@@ -9,4 +9,3 @@ export const Category = ({ cover = DEFAULT_IMAGE, path, emoji = '?' }) => (
     {emoji}
   </Anchor>
 )
-
