@@ -2,17 +2,25 @@ import React, { useState, useEffect } from 'react'
 import { Category } from '../Category'
 import { List, Item } from './syles'
 
-export const ListOfCategories = () => {
+const useCategoriesData = () => {
   const [categories, setCategories] = useState([])
-  const [showFixed, setShowFixed] = useState(false)
-
+  const [loading, setLoading] = useState(false)
   useEffect(() => {
+    setLoading(true)
     fetch('https://petgram-server-vnav-vnavarro.vercel.app/categories')
       .then(res => res.json())
       .then(response => {
         setCategories(response)
+        setLoading(false)
       })
   }, [])
+
+  return { categories, loading }
+}
+
+export const ListOfCategories = () => {
+  const [showFixed, setShowFixed] = useState(false)
+  const { categories, loading } = useCategoriesData()
 
   useEffect(() => {
     const onScroll = e => {
@@ -25,12 +33,14 @@ export const ListOfCategories = () => {
   }, [showFixed])
 
   const renderList = (fixed) => (
-    <List className={fixed ? 'fixed' : ''}>
+    <List fixed={fixed}>
       {
-        categories.map(category =>
-          <Item key={category.id}>
-            <Category {...category} />
-          </Item>
+        loading
+          ? <Item key={'loading'}><Category /></Item>
+          : categories.map(category =>
+              <Item key={category.id}>
+                <Category {...category} />
+              </Item>
         )
       }
     </List>
