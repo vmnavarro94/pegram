@@ -7,7 +7,7 @@ const useCategoriesData = () => {
   const [loading, setLoading] = useState(false)
   useEffect(() => {
     setLoading(true)
-    fetch('https://petgram-server-vnav-vnavarro.vercel.app/categories')
+    window.fetch('https://petgram-server-vnav-vnavarro.vercel.app/categories')
       .then(res => res.json())
       .then(response => {
         setCategories(response)
@@ -25,9 +25,9 @@ export const ListOfCategories = () => {
   useEffect(() => {
     const onScroll = e => {
       const newShowFixed = window.scrollY > 200
-      showFixed !== newShowFixed && setShowFixed(newShowFixed) 
+      showFixed !== newShowFixed && setShowFixed(newShowFixed)
     }
-    
+
     document.addEventListener('scroll', onScroll)
     return () => document.removeEventListener('scroll', onScroll)
   }, [showFixed])
@@ -36,12 +36,12 @@ export const ListOfCategories = () => {
     <List fixed={fixed}>
       {
         loading
-          ? <Item key={'loading'}><Category /></Item>
+          ? <Item key='loading'><Category /></Item>
           : categories.map(category =>
-              <Item key={category.id}>
-                <Category {...category} />
-              </Item>
-        )
+            <Item key={category.id}>
+              <Category {...category} />
+            </Item>
+          )
       }
     </List>
   )

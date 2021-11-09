@@ -41,4 +41,3 @@ export const GlobalStyle = createGlobalStyle`
     padding-bottom: 10px;
   }
 `
-
