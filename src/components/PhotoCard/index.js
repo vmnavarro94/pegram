@@ -26,13 +26,15 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
               {
                 (toggleLike) => {
                   const hangleFavClick = () => {
-                    !liked && toggleLike({ variables: {
-                      input: { id }
-                    }})
+                    !liked && toggleLike({
+                      variables: {
+                        input: { id }
+                      }
+                    })
                     setLiked(!liked)
                   }
 
-                  return <FavButton liked={liked} likes={likes} onClick={hangleFavClick}/>
+                  return <FavButton liked={liked} likes={likes} onClick={hangleFavClick} />
                 }
               }
             </ToggleLikeMutation>

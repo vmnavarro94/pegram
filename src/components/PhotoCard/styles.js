@@ -24,4 +24,3 @@ export const Img = styled.img`
   top: 0;
   width: 100%;
 `
-

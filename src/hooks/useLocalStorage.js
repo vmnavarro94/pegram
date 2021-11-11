@@ -9,7 +9,7 @@ export const useLocalStorage = (key, initialValue) => {
       return initialValue
     }
   })
-  
+
   const setLocalStorage = value => {
     try {
       window.localStorage.setItem(key, JSON.stringify(value))
@@ -18,6 +18,6 @@ export const useLocalStorage = (key, initialValue) => {
       console.log(e)
     }
   }
-  
+
   return [storedValue, setLocalStorage]
 }

@@ -4,10 +4,15 @@ module.exports = {
   devServer: {
     client: {
       overlay: false
-    }
+    },
+    historyApiFallback: {
+      disableDotRule: true
+    },
+    liveReload: true
   },
   output: {
-    filename: 'app.bundle.js'
+    filename: 'app.bundle.js',
+    publicPath: '/'
   },
   plugins: [
     new HtmlWebpackPlugin({
