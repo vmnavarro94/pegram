@@ -21,7 +21,7 @@ export const Nav = styled.nav`
 
 export const Link = styled(LinkRouter)`
   align-items: center;
-  color #888;
+  color: #888;
   display: inline-flex;
   height: 100%;
   justify-content: center;
