@@ -5,7 +5,6 @@ import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 import Context from './Context'
 
-
 const client = new ApolloClient({
   uri: 'https://petgram-server-vnav-vnavarro.vercel.app/graphql'
 })

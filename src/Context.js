@@ -10,7 +10,7 @@ const Provider = ({ children }) => {
       setIsAuth(true)
     }
   }
-  
+
   return (
     <Context.Provider value={value}>
       {children}
