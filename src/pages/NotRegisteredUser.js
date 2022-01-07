@@ -8,7 +8,6 @@ export const NotRegisteredUser = () => {
   const { activateAuth } = useContext(Context)
   const registerCallback = ({ data }) => {
     const { signup } = data
-    debugger
     activateAuth(signup)
   }
   const [
