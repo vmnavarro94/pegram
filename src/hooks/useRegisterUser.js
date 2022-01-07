@@ -13,5 +13,5 @@ export const useRegisterUser = (registerCallback) => {
     registerUserMutation({ variables }).then(registerCallback)
   }
 
-  return [ doRegister, { data, loading, error } ]
+  return [doRegister, { data, loading, error }]
 }

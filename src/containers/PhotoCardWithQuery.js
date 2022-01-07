@@ -8,5 +8,5 @@ export const PhotoCardWithQuery = ({ id }) => {
   if (error) return <p>Error!</p>
 
   const { photo = {} } = data
-  return <PhotoCard {...photo}/>
+  return <PhotoCard {...photo} />
 }

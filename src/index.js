@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { 
+import {
   ApolloClient,
   ApolloProvider,
   ApolloLink,
   InMemoryCache,
   HttpLink,
-  from,
+  from
 } from '@apollo/client'
 import { onError } from '@apollo/client/link/error'
 import { App } from './App'
@@ -19,7 +19,7 @@ const authMiddleware = new ApolloLink((operation, forward) => {
     operation.setContext({
       headers: {
         authorization: `Bearer ${token}`
-      },
+      }
     })
   }
 
@@ -28,8 +28,8 @@ const authMiddleware = new ApolloLink((operation, forward) => {
 
 const errorMiddleware = onError(
   ({ networkError }) => {
-    if(networkError && networkError.result.code === 'invalid_token') {
-      sessionStorage.removeItem('token')
+    if (networkError && networkError.result.code === 'invalid_token') {
+      window.sessionStorage.removeItem('token')
       window.location.href = '/'
     }
   }
@@ -41,8 +41,8 @@ const client = new ApolloClient({
     errorMiddleware,
     authMiddleware,
     new HttpLink({
-      uri: 'https://petgram-server-vnav-vnavarro.vercel.app/graphql',
-    }) 
+      uri: 'https://petgram-server-vnav-vnavarro.vercel.app/graphql'
+    })
   ])
 })
 

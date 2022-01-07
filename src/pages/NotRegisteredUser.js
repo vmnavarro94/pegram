@@ -14,14 +14,14 @@ export const NotRegisteredUser = () => {
     registerUser,
     {
       loading: registerLoading,
-      error: registerError,
-    },
+      error: registerError
+    }
   ] = useRegisterUser(registerCallback)
   const [
     login,
     {
       loading: loginLoading,
-      error: loginError,
+      error: loginError
     }
   ] = useLogin(registerCallback)
   const registerErrorMsg = registerError && 'El usuario ya existe o hay algún problema.'

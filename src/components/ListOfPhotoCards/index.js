@@ -7,7 +7,7 @@ export const ListOfPhotoCards = ({ categoryId }) => {
 
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error!</p>
-  
+
   return (
     <ul>
       {

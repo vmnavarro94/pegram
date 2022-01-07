@@ -13,6 +13,5 @@ export const useLogin = (loginCallback) => {
     loginMutation({ variables }).then(loginCallback)
   }
 
-  return [ doLogin, { data, loading, error } ]
+  return [doLogin, { data, loading, error }]
 }
-

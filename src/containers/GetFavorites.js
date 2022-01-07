@@ -27,4 +27,3 @@ export const FavsWithQuery = () => {
 
   return <ListOfFavs favs={favs} />
 }
-

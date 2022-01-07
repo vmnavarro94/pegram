@@ -15,4 +15,4 @@ const GET_PHOTOS = gql`
 
 export const useGetPhotos = (categoryId) => {
   return useQuery(GET_PHOTOS, { variables: { categoryId } })
-} 
+}
