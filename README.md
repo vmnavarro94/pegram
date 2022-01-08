@@ -1,7 +1,7 @@
 ## petgram
 
 Instagram alike app to see cute pet photos
-You can find a previo on https://petgram-vnavarro.vercel.app/
+You can find a preview on https://petgram-vnavarro.vercel.app/
 
 ## Available Scripts
 
