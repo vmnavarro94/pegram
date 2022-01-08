@@ -2,7 +2,13 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Div, Title, Subtitle } from './styles'
 
-export const Layout = ({ children, title, subtitle, renderTitle = true, renderSubtitle = true }) => (
+export const Layout = ({ 
+  children, 
+  title, 
+  subtitle,
+  renderTitle = true, 
+  renderSubtitle = true 
+}) => (
   <>
     <Helmet>
       { title && <title>{title} | Petgram 🐶</title> }
