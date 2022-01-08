@@ -1,6 +1,7 @@
 import React from 'react'
 import { PhotoCard } from '../PhotoCard'
 import { useGetPhotos } from '../../hooks/useGetPhotos'
+import { List } from './styles'
 
 export const ListOfPhotoCards = ({ categoryId }) => {
   const { loading, error, data } = useGetPhotos(categoryId)
@@ -9,10 +10,10 @@ export const ListOfPhotoCards = ({ categoryId }) => {
   if (error) return <p>Error!</p>
 
   return (
-    <ul>
+    <List>
       {
         data.photos.map(photo => <PhotoCard key={photo.id} id={photo.id} {...photo} />)
       }
-    </ul>
+    </List>
   )
 }
