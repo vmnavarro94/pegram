@@ -10,6 +10,10 @@ export const NotRegisteredUser = () => {
     const { signup } = data
     activateAuth(signup)
   }
+  const loginCallback = ({ data }) => {
+    const { login } = data
+    activateAuth(login)
+  }
   const [
     registerUser,
     {
@@ -23,9 +27,9 @@ export const NotRegisteredUser = () => {
       loading: loginLoading,
       error: loginError
     }
-  ] = useLogin(registerCallback)
+  ] = useLogin(loginCallback)
   const registerErrorMsg = registerError && 'El usuario ya existe o hay algún problema.'
-  const loginErrorMsg = loginError && 'El usuario o contrase√±a son incorrectos.'
+  const loginErrorMsg = loginError && 'El usuario o contraseña son incorrectos.'
 
   return (
     <>
